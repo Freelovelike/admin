@@ -1,0 +1,134 @@
+{
+  "name": "BBQ Admin Dashboard Rules",
+  "version": "1.0.0",
+  "description": "BBQ 管理后台代码规范和项目结构规则",
+  
+  "technology_stack": {
+    "frontend": {
+      "framework": "React 18",
+      "language": "TypeScript",
+      "build_tool": "Vite",
+      "state_management": "Zustand",
+      "routing": "React Router DOM",
+      "animation": "React Transition Group"
+    }
+  },
+
+  "folder_structure": {
+    "src": {
+      "components": {
+        "dashboard": ["统计面板相关组件"],
+        "users": ["用户管理相关组件"],
+        "tasks": ["任务管理相关组件"],
+        "invites": ["邀请管理相关组件"],
+        "games": ["游戏配置相关组件"],
+        "transactions": ["充值提现相关组件"],
+        "settings": ["全局配置相关组件"]
+      },
+      "stores": ["Zustand 状态管理"],
+      "types": ["TypeScript 类型定义"],
+      "utils": ["工具函数"],
+      "api": ["API 接口"],
+      "hooks": ["自定义 Hooks"],
+      "layouts": ["页面布局组件"],
+      "pages": ["路由页面"]
+    }
+  },
+
+  "coding_rules": {
+    "typescript": {
+      "strict": true,
+      "interface_naming": "以 I 开头",
+      "type_naming": "以 T 开头",
+      "enum_naming": "以 E 开头"
+    },
+    "components": {
+      "naming": "PascalCase",
+      "file_extension": ".tsx"
+    },
+    "state_management": {
+      "store_naming": "use{StoreName}Store",
+      "action_naming": "camelCase"
+    }
+  },
+
+  "features": {
+    "dashboard": {
+      "user_statistics": {
+        "total_users": "注册用户总量",
+        "new_users": "新增用户统计(日/周/月)",
+        "active_users": "活跃用户数(日/周/月)",
+        "retention_rate": "用户留存率(日/周/月)",
+        "online_users": "同时在线人数",
+        "bot_subscribers": "bot订阅人数",
+        "login_frequency": "用户登录频率",
+        "game_plays": "用户游戏次数",
+        "task_completion": "任务完成率统计"
+      },
+      "risk_control": {
+        "ip_limit": "IP账号数量限制"
+      }
+    },
+    "user_management": {
+      "search_fields": ["邀请码", "TG账号", "用户ID"],
+      "user_info": [
+        "TG账号",
+        "邀请码",
+        "上级信息",
+        "BBQ余额",
+        "累计数据",
+        "黑名单状态"
+      ]
+    },
+    "task_management": {
+      "fields": [
+        "任务ID",
+        "任务名称",
+        "任务链接",
+        "任务类型",
+        "任务奖励",
+        "激活状态"
+      ]
+    },
+    "transaction_management": {
+      "deposit": {
+        "fields": [
+          "用户ID",
+          "订单号",
+          "邀请码",
+          "充值钱包",
+          "哈希地址",
+          "代币类型",
+          "充值数量",
+          "到账BBQ"
+        ]
+      },
+      "withdrawal": {
+        "fields": [
+          "用户ID",
+          "订单号",
+          "到账地址",
+          "提现数量",
+          "状态",
+          "审核操作"
+        ]
+      }
+    },
+    "game_settings": {
+      "bbq_war": {
+        "fee_rate": "获胜手续费率",
+        "limits": {
+          "min": "最小支持数量",
+          "max": "最大支持数量"
+        }
+      },
+      "mining": {
+        "levels": {
+          "pricing": "各级矿机价格",
+          "merge_rates": "合成概率",
+          "output_rates": "产出量配置"
+        }
+      }
+    }
+  }
+}
